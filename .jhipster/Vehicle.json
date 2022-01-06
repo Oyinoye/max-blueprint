@@ -1,0 +1,51 @@
+{
+  "name": "Vehicle",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "plateNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "model",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "photo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "vehicleType",
+      "otherEntityRelationshipName": "vehicle",
+      "relationshipName": "vehicleType",
+      "otherEntityField": "code"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "vehicle",
+      "relationshipName": "location",
+      "otherEntityField": "code"
+    }
+  ],
+  "javadoc": "Vehicle",
+  "entityTableName": "vehicle",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["maxApp"],
+  "angularJSSuffix": "mySuffix",
+  "databaseType": "sql",
+  "changelogDate": "20220106202654"
+}

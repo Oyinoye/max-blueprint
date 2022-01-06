@@ -1,0 +1,69 @@
+/**
+ * JHipster JDL model for myGateway
+ */
+
+application {
+  config {
+    packageName ng.com.max
+    baseName maxApp
+    applicationType gateway
+    authenticationType jwt
+    clientFramework react
+    databaseType sql
+    devDatabaseType postgresql
+    dtoSuffix DTO
+    enableSwaggerCodegen true
+    entitySuffix Entity
+    languages [en, fr]
+    messageBroker kafka
+    nativeLanguage en
+    prodDatabaseType postgresql
+    serviceDiscoveryType eureka
+    testFrameworks [protractor, cucumber, gatling]
+
+  }
+  entities *
+}
+
+// ==============================
+// Entity definitions starts here
+// ==============================
+
+/** Vehicle  **/
+entity Vehicle {
+    description String
+    plateNumber String
+    model String
+    photo ImageBlob
+}
+
+/** Different type of Locations **/
+entity VehicleType {
+    code String
+    description String
+}
+/** This defines different Location **/
+entity Location {
+    code String
+    description String
+}
+enum Frequency {
+	DAILY, WEEKLY, MONTHLY, ANNUALLY
+}
+
+relationship ManyToOne {
+    Vehicle{vehicleType(code)} to VehicleType
+    Vehicle{location(code)} to Location
+}
+
+
+// =======
+// Options
+// =======
+// Set pagination options
+paginate Vehicle with pagination
+dto * with mapstruct
+// Set service options to all
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mySuffix

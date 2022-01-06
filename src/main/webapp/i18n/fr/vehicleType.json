@@ -1,0 +1,25 @@
+{
+  "maxApp": {
+    "vehicleType": {
+      "home": {
+        "title": "VehicleTypes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Vehicle Type",
+        "createOrEditLabel": "Créer ou éditer un Vehicle Type",
+        "notFound": "Aucun Vehicle Type trouvé"
+      },
+      "created": "Un nouveau Vehicle Type a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Vehicle Type avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Vehicle Type avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Vehicle Type {{ id }} ?"
+      },
+      "detail": {
+        "title": "Vehicle Type"
+      },
+      "id": "ID",
+      "code": "Code",
+      "description": "Description"
+    }
+  }
+}
