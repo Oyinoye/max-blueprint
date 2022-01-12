@@ -1,3 +1,4 @@
+
 FROM node:14-alpine
 
 # Create app directory
@@ -12,14 +13,15 @@ COPY . .
 
 WORKDIR server
 
-RUN npm install
+RUN npm install --force
 
 # install client deps
 
 WORKDIR ..
 
-RUN npm install
+RUN npm install --force
 
 EXPOSE 8081
 
 ENTRYPOINT ["npm", "run", "start:app" ]
+

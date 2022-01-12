@@ -2,8 +2,8 @@ version: '3.8'
 services:
   maxapp-postgresql:
     image: postgres:13.2
-    # volumes:
-    #     - ~/volumes/jhipster/maxApp/postgresql/:/var/lib/postgresql/data/
+    volumes:
+      - ~/volumes/jhipster/maxApp/postgresql/:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=sa
       - POSTGRES_PASSWORD=yourStrong(!)Password

@@ -4,5 +4,6 @@ services:
     build: ../../..
     container_name: maxapp-app
     environment:
+      env_file: .env
     ports:
       - 8080:8080
